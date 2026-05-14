@@ -2,3 +2,13 @@ pandas==2.2.0
 numpy==1.26.0
 python-dateutil==2.8.2
 folium==0.15.1
+
+Commit the Code:
+
+git add src/visualizer.py main.py requirements.txt
+
+git commit -m "Add interactive mapping for patient hot-spots"
+
+Generate the Artifact: Run python main.py. You will see a new file named cgt_access_map.html in your directory.
+
+View the Result: Open that HTML file in any browser. You’ll see red "Plus" icons for your hospitals and a glowing heatmap where your genomic-matched, 3L+ patients live.
