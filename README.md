@@ -10,7 +10,7 @@ As noted in the project overview highlighted in **{E862A2A3-EED6-4AD6-8AD8-199B2
 This repository serves as the central hub for three specialized sub-engines, each tackling a critical "Friction Point" in the Biotech value chain:
 
 * **Pillar 1: Market Access & Finance**
-* **[Net-Guard-GTN-Optimizer](./net-guard-gtn-optimizer)::** Protecting revenue integrity through Gross-to-Net (GTN) simulations and rebate logic.
+* [**Net-Guard-GTN-Optimizer**](https://github.com/your-username/Net-guard-gtn-optimizer): Protecting revenue integrity through Gross-to-Net (GTN) simulations and rebate logic.
 
 
 * **Pillar 2: Physician & Patient Targeting**
