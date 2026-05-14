@@ -84,3 +84,10 @@ if 'high_value_target' not in locals(): # Check if high_value_target is already 
 final_target_list = set(high_value_target).intersection(access_eligible)
 
 print(f"Final Actionable Patients: {len(final_target_list)}")
+
+from src.visualizer import generate_patient_map
+
+# ... (Previous Logic for Genomic and Claims filtering) ...
+
+# Generate the map for the final high-value population
+generate_patient_map(final_target_df, qtc_locations)
