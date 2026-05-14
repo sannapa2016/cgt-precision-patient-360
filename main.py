@@ -35,3 +35,24 @@ candidates_genomic = get_genomic_candidates(genomic_data, 'biomarker', 'BCMA_POS
 high_value_target = set(candidates_3l).intersection(candidates_genomic)
 
 print(f"Project Insight: Found {len(high_value_target)} patients eligible for CGT intervention.")
+
+from src.geo_mapping import calculate_distance
+
+# Mock data for Treatment Centers
+qtc_locations = [{'name': 'Mayo Clinic', 'lat': 44.02, 'lon': -92.46}]
+
+def filter_by_access(patient_df, centers, max_miles=100):
+    eligible_ids = []
+    for _, patient in patient_df.iterrows():
+        for center in centers:
+            dist = calculate_distance(patient['lat'], patient['lon'], center['lat'], center['lon'])
+            if dist <= max_miles:
+                eligible_ids.append(patient['patient_id'])
+                break
+    return set(eligible_ids)
+
+# Execute the final Patient-360 Filter
+access_eligible = filter_by_access(patient_data_with_coords, qtc_locations)
+final_target_list = high_value_target.intersection(access_eligible)
+
+print(f"Final Actionable Patients: {len(final_target_list)}")
