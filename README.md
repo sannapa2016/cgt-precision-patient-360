@@ -2,7 +2,7 @@
 
 **The End-to-End Commercial Intelligence Suite for Cell & Gene Therapy**
 
-As noted in the project overview highlighted in **{E862A2A3-EED6-4AD6-8AD8-199B2ED03F81}.png**, this pipeline identifies patients with specific genetic biomarkers who have failed multiple lines of therapy (LOT). This ensures that life-saving medicine reaches the right patient at the optimal clinical window.
+As noted in the project overview highlighted in this pipeline identifies patients with specific genetic biomarkers who have failed multiple lines of therapy (LOT). This ensures that life-saving medicine reaches the right patient at the optimal clinical window.
 
 
 ### The Three Pillars of Commercial Excellence
