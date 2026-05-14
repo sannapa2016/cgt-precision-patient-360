@@ -1,40 +1,37 @@
 import pandas as pd
-from datetime import datetime, timedelta
 
-# 1. Load Data
-# If 'claims_data.csv' and 'genomic_profiles.csv' are not in your Colab environment,
+# 1. Load your datasets (Use mock data for testing)
+# If 'data/claims.csv' and 'data/genomics.csv' are not in your Colab environment,
 # you will need to upload them. For demonstration, I will create dummy data.
 try:
-    claims = pd.read_csv('claims_data.csv', parse_dates=['service_date'])
-    genomics = pd.read_csv('genomic_profiles.csv')
+    claims_data = pd.read_csv('data/claims.csv', parse_dates=['service_date'])
+    genomic_data = pd.read_csv('data/genomics.csv')
 except FileNotFoundError:
     print("Required data files not found. Creating dummy data for demonstration.")
-    # Create dummy claims data with required columns for calculate_lot
-    claims_data = {
+    # Create dummy claims data with required columns for flag_treatment_lines
+    claims_data = pd.DataFrame({
         'patient_id': [1, 1, 1, 2, 2, 3, 3, 3],
         'service_date': [
-            datetime(2023, 1, 1), datetime(2023, 1, 15), datetime(2023, 3, 1),
-            datetime(2023, 2, 1), datetime(2023, 2, 10), datetime(2023, 1, 5), datetime(2023, 1, 20), datetime(2023, 3, 10)
+            pd.to_datetime('2023-01-01'), pd.to_datetime('2023-01-15'), pd.to_datetime('2023-03-01'),
+            pd.to_datetime('2023-02-01'), pd.to_datetime('2023-02-10'), pd.to_datetime('2023-01-05'), pd.to_datetime('2023-01-20'), pd.to_datetime('2023-03-10')
         ],
         'drug_name': ['DrugA', 'DrugA', 'DrugB', 'DrugC', 'DrugC', 'DrugA', 'DrugA', 'DrugD']
-    }
-    claims = pd.DataFrame(claims_data)
+    })
 
-    # Create dummy genomic profiles data with required columns for filter_genomic_candidates
-    genomics_data = {
+    # Create dummy genomic profiles data with required columns for get_genomic_candidates
+    genomic_data = pd.DataFrame({
         'patient_id': [1, 2, 3],
-        'mutation': ['HER2_POS', 'BRAF_V600E', 'HER2_POS']
-    }
-    genomics = pd.DataFrame(genomics_data)
+        'biomarker': ['BCMA_POSITIVE', 'HER2_POS', 'BCMA_POSITIVE']
+    })
 
-# 2. Identify 3L+ Patients
-claims_with_lot = calculate_lot(claims)
-eligible_by_clinic = claims_with_lot[claims_with_lot['line_number'] >= 3]['patient_id'].unique()
+# 2. Process Claims to find patients in 3rd Line of Therapy (3L+)
+processed_claims = flag_treatment_lines(claims_data)
+candidates_3l = processed_claims[processed_claims['current_lot'] >= 3]['patient_id'].unique()
 
-# 3. Identify Genetically Eligible
-eligible_by_genetics = filter_genomic_candidates(genomics, "HER2_POS")
+# 3. Process Genomics to find specific biomarkers (e.g., BCMA+)
+candidates_genomic = get_genomic_candidates(genomic_data, 'biomarker', 'BCMA_POSITIVE')
 
-# 4. Intersection (The High-Value Sub-population)
-high_value_patients = set(eligible_by_clinic).intersection(set(eligible_by_genetics))
+# 4. Identify the "High-Value" Sub-population
+high_value_target = set(candidates_3l).intersection(candidates_genomic)
 
-print(f"Total High-Value Candidates identified for CGT: {len(high_value_patients)}")
+print(f"Project Insight: Found {len(high_value_target)} patients eligible for CGT intervention.")
