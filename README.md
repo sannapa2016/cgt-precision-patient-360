@@ -46,9 +46,6 @@ As shown in **{1355E29E-14E4-480E-A59E-5CC580B0F8B0}.png**, this repository is o
 * `main.py`: The entry point for the 360-degree patient identification pipeline.
 
 
-## Executive Summary
-
-By combining **Gross-to-Net optimization**, **Predictive Referral Mapping**, and **Patient Sentiment NLP**, this suite provides a 360-degree view of the therapeutic landscape. It empowers Biotech leaders to navigate the complexities of cell and gene therapy launches with clinical precision and financial confidence.
 
 
 ### Final Step for your Portfolio:
