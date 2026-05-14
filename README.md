@@ -1,56 +1,38 @@
+### CGT-Precision-Patient-360: Executive Overview
 
-# CGT-Precision-Patient-360
+**The End-to-End Commercial Intelligence Suite for Cell & Gene Therapy**
 
-### *The End-to-End Commercial Intelligence Suite for Cell & Gene Therapy*
-
-`CGT-Precision-Patient-360` is an integrated Python-based pipeline designed for the precision launch of high-science therapies. As noted in the project overview (**{1355E29E-14E4-480E-A59E-5CC580B0F8B0}.png**), this engine identifies patients with specific genetic biomarkers who have failed multiple lines of therapy (LOT), ensuring that the right medicine reaches the right patient at the right time.
-
-
-## The Three Pillars of Commercial Excellence
-
-This repository serves as the central hub for three specialized sub-engines. Each tackles a critical "Friction Point" in the Biotech value chain:
-
-### 1. Financial Integrity: [Net-Guard-GTN-Optimizer](https://www.google.com/search?q=link-to-your-repo)
-
-* **The Problem:** Revenue erosion due to complex rebate structures and 340B pricing.
-* **The Solution:** An automated GTN waterfall and rebate logic engine that protects net price and ensures value-based contract (VBC) viability.
-* **Visual:** Refer to the **GTN-Waterfall.png** for revenue erosion insights.
-
-### 2. Physician Intelligence: [Referral-Sense-AI](https://www.google.com/search?q=link-to-your-repo)
-
-* **The Problem:** Rare disease patients are often "hidden" in non-specialized community practices.
-* **The Solution:** NPI-level targeting using proxy claims signals and Haversine mapping to locate undiagnosed patient clusters.
-* **Impact:** Shifting commercial strategy from "Reactive" to "Predictive."
-
-### 3. Patient Advocacy: [Patient-Voice-NLP](https://www.google.com/search?q=link-to-your-repo)
-
-* **The Problem:** Clinical data doesn't capture the "Diagnostic Odyssey" or travel barriers.
-* **The Solution:** Biomedical NLP (via `scispaCy`) that extracts unmet needs and sentiment from community discourse.
-* **Impact:** Identifying logistics friction (travel distance/denials) to inform support programs.
+As noted in the project overview highlighted in **{E862A2A3-EED6-4AD6-8AD8-199B2ED03F81}.png**, this pipeline identifies patients with specific genetic biomarkers who have failed multiple lines of therapy (LOT). This ensures that life-saving medicine reaches the right patient at the optimal clinical window.
 
 
-## Technical Stack
+### The Three Pillars of Commercial Excellence
 
-* **NLP:** `scispaCy`, `transformers` (BERT)
-* **Analytics:** `pandas`, `scikit-learn` (Random Forest targeting)
-* **Finance Logic:** LaTeX-based mathematical modeling for GTN optimization
-* **Visualization:** `matplotlib`, `seaborn`
+This repository serves as the central hub for three specialized sub-engines, each tackling a critical "Friction Point" in the Biotech value chain:
+
+* **Pillar 1: Market Access & Finance**
+* **[Net-Guard-GTN-Optimizer](https://www.google.com/search?q=https://github.com/your-username/net-guard-gtn-optimizer):** Protecting revenue integrity through Gross-to-Net (GTN) simulations and rebate logic.
 
 
-## Project Structure
+* **Pillar 2: Physician & Patient Targeting**
+* **[Referral-Sense-AI]():** Identifying undiagnosed patient clusters and "hidden" specialists via NPI-level proxy claims and geospatial mapping.
 
-As shown in **{1355E29E-14E4-480E-A59E-5CC580B0F8B0}.png**, this repository is organized for production:
 
-* `src/`: Contains the core logic modules for visualization and data processing.
-* `data/`: Simulated oncology patient datasets with biomarker and LOT history.
-* `main.py`: The entry point for the 360-degree patient identification pipeline.
+* **Pillar 3: Unmet Need & Human Sentiment**
+* **[Patient-Voice-NLP]():** Leveraging medical-grade NLP to decode the "Diagnostic Odyssey" and identify physical barriers to therapy access.
+
+
+### Portfolio Visual Summary
+
+To provide immediate proof of work, this master README references key visualizations from the sub-modules:
+
+1. **Revenue Erosion Mapping:** (See **GTN-Waterfall.png** in the Net-Guard repo).
+2. **Explainable Adherence Risk:** (See **SHAP-Summary.png** in the Adherence repo).
+3. **Clinical Journey Logic:** (See **oncology-rwe-lot-engine** for TTNT calculations).
+
+### Strategic Vision
+
+By unifying **RWE (Real-World Evidence)**, **Bio-Medical NLP**, and **Predictive ML**, this suite demonstrates a sophisticated understanding of the Cell & Gene Therapy landscape—moving from simple data science to **Precision Commercialization**.
 
 
 
 
-### Final Step for your Portfolio:
-
-1. **Update the Links:** Replace the `(link-to-your-repo)` placeholders with the actual URLs of your three GitHub projects.
-2. **Add your Visuals:** Make sure to cross-reference your images (like **{D405B829-73DA-43C3-A4F2-D1E28C430F9F}.png**) in this master page to show you have working UI/UX.
-
-**You have officially built a professional-grade Biotech tech stack. How does it feel to see the whole story connected?**
