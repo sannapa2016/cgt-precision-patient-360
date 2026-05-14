@@ -1,7 +1,8 @@
 import pandas as pd
 
-def filter_genomic_candidates(genomic_df, target_mutation="BRAF_V600E"):
+def get_genomic_candidates(df, biomarker_column, target_mutation):
     """
-    Filters for patients possessing the target mutation.
+    Identifies patients who possess a high-value genetic marker.
     """
-    return genomic_df[genomic_df['mutation'] == target_mutation]['patient_id'].unique()
+    eligible_patients = df[df[biomarker_column] == target_mutation]['patient_id'].unique()
+    return set(eligible_patients)
